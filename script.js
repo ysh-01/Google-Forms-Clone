@@ -72,20 +72,19 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addNewQuestion = addNewQuestion;
-    window.deleteQuestion = deleteQuestion;
-    window.addOption = addOption;
-    window.changeQuestionType = changeQuestionType;
+  window.deleteQuestion = deleteQuestion;
+  window.addOption = addOption;
+  window.changeQuestionType = changeQuestionType;
 });
 
 function deleteQuestion(element) {
-    let questionContainer = element.closest(".question");
-    if (questionContainer) {
-      questionContainer.remove();
-      questionCount--;  // Decrease the question count here
-    }
-    moveUp();
+  let questionContainer = element.closest(".question");
+  if (questionContainer) {
+    questionContainer.remove();
+    questionCount--; // Decrease the question count here
   }
-  
+  moveUp();
+}
 
 let firstClick = true;
 function moveDown() {
@@ -111,19 +110,17 @@ function moveDown() {
 }
 
 function moveUp() {
-    const moveableDiv = document.getElementById('moveableDiv');
-    // let offset = parseInt(moveableDiv.style.transform.replace('translateY(', '').replace('px)', '')) || 0;
-    let offset;
-    if (questionCount === 0) {
-      // On last delete
-      offset = 0;  // Move back to the original position
-    } else {
-      // On other deletes
-      offset -= 138; // Adjust this value based on the desired movement
-    }
-  
-    // Apply new transformation
-    moveableDiv.style.transform = `translateY(${offset}px)`;
+  const moveableDiv = document.getElementById("moveableDiv");
+  let offset =
+    parseInt(
+      moveableDiv.style.transform.replace("translateY(", "").replace("px)", "")
+    ) || 0;
+  if (questionCount === 0) {
+    offset = 0;
+  } else {
+    // On other deletes
+    offset -= 138;
   }
-  
 
+  moveableDiv.style.transform = `translateY(${offset}px)`;
+}
