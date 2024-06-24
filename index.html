@@ -77,13 +77,13 @@
         <button class="btn btn-secondary" onclick="addOption(this)">
           Add Option
         </button>
-        <button class="btnn" onclick="deleteQuestion(this)">
+        <button class="btnn" id = "mvoeUpButton" onclick="deleteQuestion(this); moveUp()">
           <img src="images/bin.png" alt="" width="20px" height="20px" />
         </button>
       </div>
       <div class="sidebar">
-        <div>
-          <button class="btnp" onclick="addNewQuestion()">
+        <div id="moveableDiv">
+          <button class="btnp" onclick="addNewQuestion(); moveDown()">
             <img src="images/add.png" alt="" width="20px" height="20px" />
           </button>
         </div>
