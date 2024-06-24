@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="text" class="form-control option-input" placeholder="Option 1">
             </div>
             <button class="btn btn-secondary" onclick="addOption(this)">Add Option</button>
+            <button class="btnn" onclick="deleteQuestion(this)">
+          <img src="images/bin.png" alt="" width="20px" height="20px" />
+        </button>
         `;
         questionsSection.appendChild(questionDiv);
     }
@@ -63,3 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     window.changeQuestionType = changeQuestionType;
     window.addNewQuestion = addNewQuestion;
 });
+
+function deleteQuestion(element) {
+    let questionContainer = element.closest('.question');
+    if (questionContainer) {
+      questionContainer.remove();
+    }
+  }
