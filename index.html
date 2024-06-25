@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -136,18 +136,21 @@
             placeholder="Type your question here"
           />
           <div class="options-container">
-            <input
-              type="text"
-              class="form-control option-input"
-              placeholder="Option 1"
-            />
+            <div class="option">
+              <input
+                type="text"
+                class="form-control option-input"
+                placeholder="Option 1"
+              />
+              <span class="delete-option" onclick="deleteOption(this)">&#10005;</span>
+            </div>
           </div>
           <button class="btn btn-secondary" onclick="addOption(this)">
             Add Option
           </button>
           <button
             class="btnn"
-            id="mvoeUpButton"
+            id="moveUpButton"
             onclick="deleteQuestion(this); moveUp()"
           >
             <img src="images/bin.png" alt="" width="20px" height="20px" />

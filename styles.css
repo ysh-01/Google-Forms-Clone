@@ -10,6 +10,24 @@
   transition: transform 1s ease;
 }
 
+.option {
+  position: relative;
+}
+
+.delete-option {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+}
+
+.option:hover .delete-option {
+  display: block;
+}
+
+
 .sidebar {
   position: absolute;
   top: 0;
